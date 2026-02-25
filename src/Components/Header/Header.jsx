@@ -81,7 +81,7 @@ export const Header = ({ activeTab, onNavClick }) => {
         }}
       >
         <LogoBox>
-          <div className="logo-icon">A</div>
+          <div className="logo-icon">H</div>
           <span>Hindustan</span>
         </LogoBox>
 
