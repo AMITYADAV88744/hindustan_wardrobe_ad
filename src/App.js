@@ -6,6 +6,8 @@ import ServicesSection from './Components/OurServices/Services';
 import VideoSection from './Components/VideoSection/VideoSection';
 import ScreenshotsSection from './Components/Screens/screens';
 import Download from './Components/Download/Download';
+import Footer from './Components/Footer/Footer';
+// import Footer from './Components/footer/footer';
 
 function App() {
   const [activeTab, setActiveTab] = useState('Home');
@@ -19,6 +21,7 @@ function App() {
       <VideoSection/>
       <ScreenshotsSection/>
       <Download/>
+      <Footer/>
     </main>
   );
 }
