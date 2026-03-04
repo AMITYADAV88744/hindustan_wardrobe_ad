@@ -1,10 +1,23 @@
-import { AppBar, Toolbar, Box, Button, styled } from '@mui/material';
+import { useState } from 'react';
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  styled,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: '#FFFFFF',
   boxShadow: 'none',
   borderBottom: 'none',
-  padding: '20px 0',
   transition: 'all 0.3s ease',
 });
 
@@ -15,6 +28,7 @@ const LogoBox = styled(Box)({
   fontWeight: 'bold',
   fontSize: '24px',
   color: '#1a1a1a',
+  flexShrink: 0, // prevents shrinking on small screens
   '& .logo-icon': {
     width: '32px',
     height: '32px',
@@ -30,10 +44,10 @@ const LogoBox = styled(Box)({
 
 const NavItems = styled(Box)({
   display: 'flex',
-  gap: '40px',
+  gap: '20px', // smaller gap to fit on smaller screens
   marginLeft: 'auto',
-  marginRight: '40px',
   alignItems: 'center',
+  flexShrink: 0,
   '@media (max-width: 768px)': {
     display: 'none',
   },
@@ -68,16 +82,28 @@ const NavLink = styled(Button, {
 }));
 
 export const Header = ({ activeTab, onNavClick }) => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const navItems = ['Home', 'Feature', 'Services', 'Pricing', 'Pages', 'Contact'];
+
+  const toggleDrawer = (open) => () => {
+    setDrawerOpen(open);
+  };
+
+  const handleNavClick = (item) => {
+    onNavClick(item);
+    setDrawerOpen(false);
+  };
 
   return (
     <StyledAppBar position="sticky">
       <Toolbar
         sx={{
-          maxWidth: '1400px',
-          margin: '0 auto',
           width: '100%',
-          px: { xs: 2, md: 4 },
+          px: 2, // padding left/right
+          display: 'flex',
+          justifyContent: 'space-between',
+          boxSizing: 'border-box', // ensures padding is included in width
         }}
       >
         <LogoBox>
@@ -96,6 +122,37 @@ export const Header = ({ activeTab, onNavClick }) => {
             </NavLink>
           ))}
         </NavItems>
+
+        {/* Hamburger Icon for small screens */}
+        <IconButton
+          sx={{ display: { xs: 'block', md: 'none' }, color: '#000' }}
+          edge="end"
+          onClick={toggleDrawer(true)}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        {/* Drawer */}
+        <Drawer
+          anchor="right"
+          open={drawerOpen}
+          onClose={toggleDrawer(false)}
+          PaperProps={{
+            sx: { width: '80vw', maxWidth: 300 }, // drawer width fits screen
+          }}
+        >
+          <Box sx={{ width: '100%' }} role="presentation">
+            <List>
+              {navItems.map((item) => (
+                <ListItem key={item} disablePadding>
+                  <ListItemButton onClick={() => handleNavClick(item)}>
+                    <ListItemText primary={item} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Drawer>
       </Toolbar>
     </StyledAppBar>
   );

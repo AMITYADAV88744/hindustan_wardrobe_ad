@@ -11,37 +11,54 @@ import BuildIcon from '@mui/icons-material/Build';
 import PaymentIcon from '@mui/icons-material/Payment';
 import SendIcon from '@mui/icons-material/Send';
 
+/* ================= Animation ================= */
+
 const float = keyframes`
   0%,100% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
 `;
 
+/* ================= Section ================= */
+
 const SectionContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(10, 0),
+  padding: theme.spacing(6, 2),
   background: '#E9F0F2',
 }));
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
-  fontSize: 44,
   fontWeight: 800,
   textAlign: 'center',
   color: '#2E0A4F',
-  marginBottom: theme.spacing(8),
+  marginBottom: theme.spacing(6),
+  fontSize: '28px',
+
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '34px',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '44px',
+    marginBottom: theme.spacing(8),
+  },
 }));
+
+/* ================= Card ================= */
 
 const ServiceCard = styled(Card)(({ theme }) => ({
   borderRadius: 16,
-  padding: theme.spacing(5, 4),
+  padding: theme.spacing(4),
   textAlign: 'center',
   background: '#fff',
   boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
   transition: '0.3s',
-  height: '100%',
+  width: '100%',
+
   '&:hover': {
     transform: 'translateY(-6px)',
     boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
   },
 }));
+
+/* ================= Icon ================= */
 
 const IconWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -51,27 +68,31 @@ const IconWrapper = styled(Box)(({ theme }) => ({
 
 const DottedPattern = styled(Box)(() => ({
   position: 'absolute',
-  width: 100,
-  height: 100,
+  width: 80,
+  height: 80,
   top: -10,
   right: -10,
-  backgroundImage: 'radial-gradient(circle, #D1C4E9 2px, transparent 2px)',
-  backgroundSize: '18px 18px',
+  backgroundImage:
+    'radial-gradient(circle, #D1C4E9 2px, transparent 2px)',
+  backgroundSize: '16px 16px',
   opacity: 0.4,
 }));
 
 const CircleIcon = styled(Avatar)(({ gradient }) => ({
-  width: 85,
-  height: 85,
+  width: 80,
+  height: 80,
   margin: '0 auto',
   background: gradient,
-  '& svg': {
-    fontSize: 40,
-    color: '#fff',
-  },
   position: 'relative',
   zIndex: 2,
+
+  '& svg': {
+    fontSize: 36,
+    color: '#fff',
+  },
 }));
+
+/* ================= Text ================= */
 
 const ServiceTitle = styled(Typography)(({ theme }) => ({
   fontSize: 20,
@@ -80,11 +101,13 @@ const ServiceTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-const ServiceDescription = styled(Typography)(({ theme }) => ({
+const ServiceDescription = styled(Typography)(() => ({
   fontSize: 14,
   color: '#6B6F8E',
   lineHeight: 1.7,
 }));
+
+/* ================= Data ================= */
 
 const services = [
   {
@@ -110,9 +133,11 @@ const services = [
   },
 ];
 
+/* ================= Component ================= */
+
 export default function ServicesSection() {
   return (
-    <SectionContainer >
+    <SectionContainer>
       <Container maxWidth="lg">
         <SectionTitle>
           How Can We Help Your
@@ -120,10 +145,33 @@ export default function ServicesSection() {
           with Appco!
         </SectionTitle>
 
-        <Grid container spacing={4} justifyContent="center" sx={{ mb: 8 }}>
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          sx={{
+            maxWidth: '1100px',   
+            margin: '0 auto',    
+          }}
+        >
           {services.map((service, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-              <ServiceCard>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={index}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <ServiceCard
+                sx={{
+                  maxWidth: '320px',  
+                  width: '100%',
+                }}
+              >
                 <IconWrapper>
                   <DottedPattern />
                   <CircleIcon gradient={service.gradient}>
