@@ -10,10 +10,10 @@ import {
   Fab,
 } from '@mui/material';
 import { styled, keyframes } from '@mui/material/styles';
-import BuildIcon from '@mui/icons-material/Build';
-import SecurityIcon from '@mui/icons-material/Shield';
+import StyleIcon from '@mui/icons-material/Style';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import PaymentsIcon from '@mui/icons-material/Payments';
 import SupportAgentIcon from '@mui/icons-material/Headset';
-import PaletteIcon from '@mui/icons-material/Palette';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const float = keyframes`
@@ -25,7 +25,6 @@ const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 `;
-
 
 const FloatingCircle = styled(Box)(({ delay = 0, size = 30 }) => ({
   position: 'absolute',
@@ -72,30 +71,33 @@ const ScrollToTopButton = styled(Fab)(({ theme }) => ({
 const features = [
   {
     id: 1,
-    title: 'Easy to Customize',
-    description: 'Aorem psum olorsit amet ectetur adipiscing elit, sed dov.',
-    icon: <BuildIcon />,
+    title: 'Premium Fashion Collection',
+    description:
+      'Explore a wide range of designer outfits for weddings, parties, and special occasions without buying.',
+    icon: <StyleIcon />,
   },
   {
     id: 2,
-    title: 'Extreme Security',
-    description: 'Aorem psum olorsit amet ectetur adipiscing elit, sed dov.',
-    icon: <SecurityIcon />,
+    title: 'Affordable Rentals',
+    description:
+      'Wear premium fashion at a fraction of the price by renting stylish outfits for the days you need.',
+    icon: <PaymentsIcon />,
   },
   {
     id: 3,
-    title: 'Customer Support',
-    description: 'Aorem psum olorsit amet ectetur adipiscing elit, sed dov.',
-    icon: <SupportAgentIcon />,
+    title: 'Fast Delivery & Easy Returns',
+    description:
+      'Get your outfit delivered to your doorstep and return it easily after your event.',
+    icon: <LocalShippingIcon />,
   },
   {
     id: 4,
-    title: 'Creative Design',
-    description: 'Aorem psum olorsit amet ectetur adipiscing elit, sed dov.',
-    icon: <PaletteIcon />,
+    title: 'Dedicated Customer Support',
+    description:
+      'Our support team is always ready to help you choose the perfect outfit and ensure a smooth rental experience.',
+    icon: <SupportAgentIcon />,
   },
 ];
-
 
 export default function FeaturesSection() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -114,10 +116,11 @@ export default function FeaturesSection() {
 
   return (
     <Box
+      id="features"
       sx={{
         position: 'relative',
         py: { xs: 6, md: 10 },
-        overflowX: 'hidden', 
+        overflowX: 'hidden',
       }}
     >
       <FloatingCircle
@@ -128,6 +131,7 @@ export default function FeaturesSection() {
           right: { xs: 20, md: 50 },
         }}
       />
+
       <FloatingCircle
         size={20}
         delay={1}
@@ -139,11 +143,7 @@ export default function FeaturesSection() {
       />
 
       <Container maxWidth="lg">
-        <Grid
-          container
-          spacing={{ xs: 4, md: 6 }}
-          justifyContent="center"
-        >
+        <Grid container spacing={{ xs: 4, md: 6 }} justifyContent="center">
           <Grid
             item
             xs={12}
@@ -164,14 +164,10 @@ export default function FeaturesSection() {
                 maxWidth: '700px',
               }}
             >
-              Some of the best features Of Our App!
+              Why Choose Hindustan Wardrobe?
             </Typography>
 
-            <Grid
-              container
-              spacing={{ xs: 2, md: 3 }}
-              justifyContent="center"
-            >
+            <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
               {features.map((feature, index) => (
                 <Grid
                   item

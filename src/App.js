@@ -12,14 +12,44 @@ import Footer from './Components/Footer/Footer';
 function App() {
   const [activeTab, setActiveTab] = useState('Home');
 
+  const handleNavClick = (tab) => {
+    setActiveTab(tab);
+
+    const sectionMap = {
+      Home: 'hero',
+      Feature: 'features',
+      Pages: 'screenshots'
+    };
+
+    const id = sectionMap[tab];
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <main>
-      <Header activeTab={activeTab} onNavClick={setActiveTab} />
-      <HeroSection />
-      <FeaturesSection/>
+      <Header activeTab={activeTab} onNavClick={handleNavClick} />
+
+      <div id="hero">
+        <HeroSection />
+      </div>
+
+      <div id="features">
+        <FeaturesSection />
+      </div>
+
       <ServicesSection/>
       <VideoSection/>
-      <ScreenshotsSection/>
+
+      <div id="screenshots">
+        <ScreenshotsSection/>
+      </div>
+
       <Download/>
       <Footer/>
     </main>

@@ -5,10 +5,9 @@ const HeroWrapper = styled(Box)({
   position: 'relative',
   width: '100%',
   maxWidth: '100vw',
-  overflowX: 'hidden', 
+  overflowX: 'hidden',
   backgroundColor: '#FFFFFF',
 });
-
 
 const BackgroundLayer = styled(Box)({
   position: 'absolute',
@@ -43,7 +42,6 @@ const PurpleCircle = styled(FloatingCircle)({
   opacity: 0.6,
 });
 
-
 const HeroContainer = styled(Container)({
   position: 'relative',
   zIndex: 1,
@@ -63,7 +61,6 @@ const HeroContainer = styled(Container)({
     paddingBottom: '40px',
   },
 });
-
 
 const LeftContent = styled(Box)({
   display: 'flex',
@@ -92,19 +89,19 @@ const Description = styled(Typography)({
   maxWidth: '500px',
 });
 
-
 const ButtonGroup = styled(Box)({
   display: 'flex',
   gap: '16px',
   flexWrap: 'wrap',
 });
 
-const DownloadButton = styled(Button)({
+const BrowseButton = styled(Button)({
   backgroundColor: '#C41E7B',
   color: 'white',
   textTransform: 'none',
   padding: '12px 32px',
   borderRadius: '28px',
+  fontWeight: 600,
   '&:hover': { backgroundColor: '#A01763' },
 });
 
@@ -119,7 +116,6 @@ const PlayButton = styled(Button)({
   '&:hover': { backgroundColor: '#D895C5' },
 });
 
-
 const RightContent = styled(Box)({
   display: 'flex',
   justifyContent: 'center',
@@ -129,7 +125,7 @@ const RightContent = styled(Box)({
 const MobileFrame = styled(Box)({
   width: '100%',
   maxWidth: '320px',
-  aspectRatio: '9 / 16', 
+  aspectRatio: '9 / 16',
   backgroundColor: '#fff',
   borderRadius: '40px',
   border: '12px solid #1a1a1a',
@@ -160,10 +156,9 @@ const MockupContent = styled(Box)({
   textAlign: 'center',
 });
 
-
 export const HeroSection = () => {
   return (
-    <HeroWrapper>
+    <HeroWrapper id="hero">
       <BackgroundLayer>
         <PinkCircle size="180px" top="15%" right="10%" delay="0s" />
         <PurpleCircle size="220px" top="35%" right="-5%" delay="1s" />
@@ -173,19 +168,23 @@ export const HeroSection = () => {
 
       <HeroContainer maxWidth="lg">
         <LeftContent>
-          <Label>APP LANDING PAGE</Label>
+          <Label>FASHION RENTAL PLATFORM</Label>
 
           <Title>
-            Get things done with Appco
+            Rent Premium Fashion Without Buying
           </Title>
 
           <Description>
-            Dorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore.
+            Discover stylish outfits for weddings, parties, and special occasions 
+            without the commitment of buying. Hindustan Wardrobe allows you to 
+            rent premium fashion at affordable prices and return it when you're done.
           </Description>
 
           <ButtonGroup>
-            <DownloadButton>Download</DownloadButton>
+            <BrowseButton>
+              Browse Collection
+            </BrowseButton>
+
             <PlayButton>
               <PlayArrow />
             </PlayButton>
@@ -201,10 +200,11 @@ export const HeroSection = () => {
 
             <MockupContent>
               <Typography fontWeight={700}>
-                Congratulations 🎉
+                Style for Every Occasion 👗
               </Typography>
+
               <Typography variant="body2" color="text.secondary">
-                You've taken your first step.
+                Rent designer outfits easily with Hindustan Wardrobe.
               </Typography>
             </MockupContent>
           </MobileFrame>

@@ -7,18 +7,16 @@ import {
   Avatar,
 } from '@mui/material';
 import { styled, keyframes } from '@mui/material/styles';
-import BuildIcon from '@mui/icons-material/Build';
-import PaymentIcon from '@mui/icons-material/Payment';
-import SendIcon from '@mui/icons-material/Send';
+import CheckroomIcon from '@mui/icons-material/Checkroom';
+import EventIcon from '@mui/icons-material/Event';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
-/* ================= Animation ================= */
 
 const float = keyframes`
   0%,100% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
 `;
 
-/* ================= Section ================= */
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 2),
@@ -41,7 +39,6 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-/* ================= Card ================= */
 
 const ServiceCard = styled(Card)(({ theme }) => ({
   borderRadius: 16,
@@ -58,7 +55,6 @@ const ServiceCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-/* ================= Icon ================= */
 
 const IconWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -92,7 +88,6 @@ const CircleIcon = styled(Avatar)(({ gradient }) => ({
   },
 }));
 
-/* ================= Text ================= */
 
 const ServiceTitle = styled(Typography)(({ theme }) => ({
   fontSize: 20,
@@ -107,42 +102,40 @@ const ServiceDescription = styled(Typography)(() => ({
   lineHeight: 1.7,
 }));
 
-/* ================= Data ================= */
 
 const services = [
   {
-    icon: <BuildIcon />,
-    title: 'Easily Manage',
+    icon: <CheckroomIcon />,
+    title: 'Browse Stylish Outfits',
     description:
-      'Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laboreaa.',
+      'Explore a curated collection of designer outfits for weddings, parties, and special occasions.',
     gradient: 'linear-gradient(135deg, #F062C0 0%, #D81B9C 100%)',
   },
   {
-    icon: <PaymentIcon />,
-    title: 'Get Payments Easily',
+    icon: <EventIcon />,
+    title: 'Rent for Your Occasion',
     description:
-      'Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laboreaa.',
+      'Select the perfect outfit for your event and rent it for the days you need without buying.',
     gradient: 'linear-gradient(135deg, #6A5AE0 0%, #5B3DF5 100%)',
   },
   {
-    icon: <SendIcon />,
-    title: 'Quick Messaging',
+    icon: <LocalShippingIcon />,
+    title: 'Delivery & Easy Return',
     description:
-      'Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laboreaa.',
+      'Get your outfit delivered to your doorstep and return it easily after your event is over.',
     gradient: 'linear-gradient(135deg, #F062C0 0%, #D81B9C 100%)',
   },
 ];
 
-/* ================= Component ================= */
 
 export default function ServicesSection() {
   return (
     <SectionContainer>
       <Container maxWidth="lg">
         <SectionTitle>
-          How Can We Help Your
+          How Renting Works
           <br />
-          with Appco!
+          at Hindustan Wardrobe
         </SectionTitle>
 
         <Grid
@@ -150,8 +143,8 @@ export default function ServicesSection() {
           spacing={4}
           justifyContent="center"
           sx={{
-            maxWidth: '1100px',   
-            margin: '0 auto',    
+            maxWidth: '1100px',
+            margin: '0 auto',
           }}
         >
           {services.map((service, index) => (
@@ -168,7 +161,7 @@ export default function ServicesSection() {
             >
               <ServiceCard
                 sx={{
-                  maxWidth: '320px',  
+                  maxWidth: '320px',
                   width: '100%',
                 }}
               >

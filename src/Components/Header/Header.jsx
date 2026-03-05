@@ -28,7 +28,7 @@ const LogoBox = styled(Box)({
   fontWeight: 'bold',
   fontSize: '24px',
   color: '#1a1a1a',
-  flexShrink: 0, // prevents shrinking on small screens
+  flexShrink: 0,
   '& .logo-icon': {
     width: '32px',
     height: '32px',
@@ -44,7 +44,7 @@ const LogoBox = styled(Box)({
 
 const NavItems = styled(Box)({
   display: 'flex',
-  gap: '20px', // smaller gap to fit on smaller screens
+  gap: '20px',
   marginLeft: 'auto',
   alignItems: 'center',
   flexShrink: 0,
@@ -84,7 +84,7 @@ const NavLink = styled(Button, {
 export const Header = ({ activeTab, onNavClick }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const navItems = ['Home', 'Feature', 'Services', 'Pricing', 'Pages', 'Contact'];
+  const navItems = ['Home', 'Feature', 'Pages', 'Download'];
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
@@ -100,10 +100,10 @@ export const Header = ({ activeTab, onNavClick }) => {
       <Toolbar
         sx={{
           width: '100%',
-          px: 2, // padding left/right
+          px: 2, 
           display: 'flex',
           justifyContent: 'space-between',
-          boxSizing: 'border-box', // ensures padding is included in width
+          boxSizing: 'border-box', 
         }}
       >
         <LogoBox>
@@ -123,7 +123,6 @@ export const Header = ({ activeTab, onNavClick }) => {
           ))}
         </NavItems>
 
-        {/* Hamburger Icon for small screens */}
         <IconButton
           sx={{ display: { xs: 'block', md: 'none' }, color: '#000' }}
           edge="end"
@@ -132,13 +131,12 @@ export const Header = ({ activeTab, onNavClick }) => {
           <MenuIcon />
         </IconButton>
 
-        {/* Drawer */}
         <Drawer
           anchor="right"
           open={drawerOpen}
           onClose={toggleDrawer(false)}
           PaperProps={{
-            sx: { width: '80vw', maxWidth: 300 }, // drawer width fits screen
+            sx: { width: '80vw', maxWidth: 300 },
           }}
         >
           <Box sx={{ width: '100%' }} role="presentation">

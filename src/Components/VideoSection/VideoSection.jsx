@@ -191,14 +191,15 @@ export default function VideoSection() {
           <SectionTitle>See Appco in Action</SectionTitle>
 
           <SectionDescription>
-            Watch our quick demo to see how Appco can transform the way you work and boost your productivity.
+            Take a closer look at our trending outfits, quality craftsmanship, and styles 
+            designed to make every moment fashionable.
           </SectionDescription>
 
           <VideoCardContainer onClick={() => setShowModal(true)}>
             <VideoImage>
               <img
                 src="/appco-demo-video.jpg"
-                alt="Appco Demo Video"
+                alt="HW Demo Video"
               />
               <Overlay>
                 <PlayButtonContainer>
