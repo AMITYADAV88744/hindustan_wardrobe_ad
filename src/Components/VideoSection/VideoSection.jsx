@@ -188,7 +188,7 @@ export default function VideoSection() {
     <>
       <SectionContainer>
         <Container maxWidth="lg">
-          <SectionTitle>See Appco in Action</SectionTitle>
+          <SectionTitle>See Hindusthan wardrobe in Action</SectionTitle>
 
           <SectionDescription>
             Take a closer look at our trending outfits, quality craftsmanship, and styles 

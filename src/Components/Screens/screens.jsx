@@ -17,7 +17,6 @@ const horizontalScroll = keyframes`
   100% { transform: translateX(-50%); }
 `;
 
-// Styled Components
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),
   background: "#f8f9ff",
@@ -175,9 +174,8 @@ export default function ScreenshotsSection() {
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
         <MainWrapper>
-          {/* Text Section */}
           <TextSection>
-            <SectionTitle>Applic Apps Screenshot</SectionTitle>
+            <SectionTitle>Hindusthan wardrobe Apps Screenshot</SectionTitle>
             <DescriptionText>
               Lorem ipsum dolor sit amet, consecadipicsing elit, sed do eiusmod tempor incididunt ut ore et dolore magna aliqua. Quis ipsum suspendisse gravida. Risus commodo viverra maeceasan lacus vel facilisis.
             </DescriptionText>

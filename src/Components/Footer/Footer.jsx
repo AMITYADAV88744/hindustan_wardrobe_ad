@@ -25,7 +25,6 @@ const FooterContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#0d0d2b',
   color: '#fff',
   padding: theme.spacing(8, 0, 4),
-  // marginTop: theme.spacing(10),
   width: '100%',
 }));
 
@@ -140,7 +139,6 @@ export default function Footer() {
       <Box sx={{ px: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
         <FooterContent>
           <Grid container spacing={6}>
-            {/* Logo Section */}
             <Grid item xs={12} sm={6} md={4}>
               <LogoSection>
                 <AppcoLogo>
@@ -158,11 +156,11 @@ export default function Footer() {
                       fontWeight: 700,
                     }}
                   >
-                    A
+                    H
                   </Box>
                 </AppcoLogo>
 
-                <LogoText>Appco</LogoText>
+                <LogoText>Hindusthan wardrobe</LogoText>
 
                 <Typography
                   sx={{
@@ -172,7 +170,7 @@ export default function Footer() {
                     lineHeight: 1.6,
                   }}
                 >
-                  Appco is a powerful app designed to help you manage your
+                 Hindusthan wardrobe is a powerful app designed to help you manage your
                   tasks and boost your productivity.
                 </Typography>
 
@@ -185,24 +183,16 @@ export default function Footer() {
               </LogoSection>
             </Grid>
 
-            {/* Product */}
             <Grid item xs={12} sm={6} md={4}>
               <FooterSection>
                 <SectionTitle>Product</SectionTitle>
                 <FooterLink>Features</FooterLink>
-                <FooterLink>Pricing</FooterLink>
-                <FooterLink>Security</FooterLink>
-                <FooterLink>Roadmap</FooterLink>
               </FooterSection>
             </Grid>
 
-            {/* Company */}
             <Grid item xs={12} sm={6} md={4}>
               <FooterSection>
                 <SectionTitle>Company</SectionTitle>
-                <FooterLink>About Us</FooterLink>
-                <FooterLink>Blog</FooterLink>
-                <FooterLink>Careers</FooterLink>
                 <FooterLink>Contact</FooterLink>
               </FooterSection>
             </Grid>

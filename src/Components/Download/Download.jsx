@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Container, Grid, Typography, Stack } from "@mui/material";
 import AppleIcon from "@mui/icons-material/Apple";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -18,8 +17,8 @@ const Download = () => {
         padding: { xs: "6px 12px", sm: "8px 16px" },
         borderRadius: "10px",
         textDecoration: "none",
-        maxWidth: { xs: "180px", sm: "200px" }, // limit max width
-        width: "auto", // fit content naturally
+        maxWidth: { xs: "180px", sm: "200px" },
+        width: "auto",
         fontSize: { xs: 11, sm: 14 },
         flexShrink: 0,
       }}
@@ -44,7 +43,6 @@ const Download = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
-          {/* Left Section */}
           <Grid item xs={12} md={6}>
             <Typography
               variant="h3"
@@ -60,7 +58,7 @@ const Download = () => {
               now
             </Typography>
 
-            <Typography
+            {/* <Typography
               variant="body1"
               sx={{
                 opacity: 0.9,
@@ -71,9 +69,8 @@ const Download = () => {
             >
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore fug.
-            </Typography>
+            </Typography> */}
 
-            {/* Stack buttons vertically on mobile, horizontally on larger screens */}
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={2}
@@ -84,7 +81,6 @@ const Download = () => {
             </Stack>
           </Grid>
 
-          {/* Right Section */}
           <Grid item xs={12} md={6} textAlign="center">
             <Box
               component="img"
