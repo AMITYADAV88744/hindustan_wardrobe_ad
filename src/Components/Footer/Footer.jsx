@@ -9,6 +9,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import logo from '../../assets/logo.png'; 
 
 const fadeInUp = keyframes`
   from {
@@ -36,13 +37,17 @@ const LogoSection = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(4),
 }));
 
-const AppcoLogo = styled(Box)(({ theme }) => ({
+const Logo = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   gap: theme.spacing(1),
   marginBottom: theme.spacing(2),
-  fontSize: '24px',
-  fontWeight: '700',
+
+  '& img': {
+    width: 40,
+    height: 40,
+    objectFit: 'contain',
+  },
 }));
 
 const LogoText = styled(Typography)(({ theme }) => ({
@@ -141,24 +146,9 @@ export default function Footer() {
           <Grid container spacing={6}>
             <Grid item xs={12} sm={6} md={4}>
               <LogoSection>
-                <AppcoLogo>
-                  <Box
-                    sx={{
-                      width: 40,
-                      height: 40,
-                      background:
-                        'linear-gradient(135deg, #C41E7B 0%, #7B2CBF 100%)',
-                      borderRadius: '8px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#fff',
-                      fontWeight: 700,
-                    }}
-                  >
-                    H
-                  </Box>
-                </AppcoLogo>
+                <Logo>
+                  <img src={logo} alt="Hindusthan wardrobe logo" />
+                </Logo>
 
                 <LogoText>Hindusthan wardrobe</LogoText>
 

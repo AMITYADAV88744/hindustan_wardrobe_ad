@@ -13,6 +13,7 @@ import {
   styled,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import logo from '../../assets/logo.png'; 
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: '#FFFFFF',
@@ -29,16 +30,10 @@ const LogoBox = styled(Box)({
   fontSize: '24px',
   color: '#1a1a1a',
   flexShrink: 0,
-  '& .logo-icon': {
+  '& img': {
     width: '32px',
     height: '32px',
-    background: 'linear-gradient(135deg, #C41E7B 0%, #7B2CBF 100%)',
-    borderRadius: '8px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'white',
-    fontWeight: 'bold',
+    objectFit: 'contain',
   },
 });
 
@@ -107,7 +102,7 @@ export const Header = ({ activeTab, onNavClick }) => {
         }}
       >
         <LogoBox>
-          <div className="logo-icon">H</div>
+          <img src={logo} alt="Hindustan Logo" />
           <span>Hindustan</span>
         </LogoBox>
 
